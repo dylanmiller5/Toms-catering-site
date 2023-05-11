@@ -4,49 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tom's Catering</title>
-    <!-- styles -->
-        <!-- used to get the toggle button -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
-        <!--CSS styling-->
-        <link rel="stylesheet" href="CSS/styles.css" />
-        <!--bootstrap-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 </head>
+<body>
 
-  <body>
-    <nav>
-      <div class="nav-center">
-        <!-- nav header -->
-        <div class="nav-header">
-            <a href="/">
-                <h2 id="Head">Tom's Catering</h2>
-            </a>
-          <!--toggles nav on smaller screens-->
-          <button class="nav-toggle">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
-        <!-- links -->
-        <ul class="links">
-          <li>
-            <a href="about.html">
-                <h4>about</h4></a>
-          </li>
-          <li>
-          <li>
-            <a href="contact.html"><h4>contact</h4></a></a>
-          </li>
-          <li>
-            <a href="signup.html"><h4>signup</h4></a></a>
-          </li>
-          <li>
-            <a href="checkout.html"><h4>checkout</h4></a></a>
-          </li>
-        </ul>
-        <!-- social media -->
-    </nav>
-    <!-- javascript -->
-    <script src="js/toggleNav.js"></script>
+    <!--calls the nav bar from the navigation.html file-->
+    <div id="nav-placeholder"></div>
+    <script>
+        $.get("navigation.html", function(data){
+            $("#nav-placeholder").replaceWith(data);
+        });
+    </script> 
     
     <section id="content">
         <section class="container spacer">
@@ -94,31 +63,13 @@
             </div>
         </section>
 
-        <footer class="page-footer text-center">
-            <section class="container spacer">
-                <div class="container-fluid"> <!-- If Needed Left and Right Padding in 'md' and 'lg' screen means use container class -->
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4 col-lg-4">
-                            <h2>Links</h2>
-                            <ul class="list-unstyled">
-                                <li> <a href="about-us">About us</a></li>
-                                <li> <a href="customer-service">Customer Service</a></li>
-                                <li> <a href="privacy-policy">Privacy Policy</a></li>
-                                <li> <a href="terms-and-conditions">Terms and Conditions</a></li>
-                                <li> <a href="click-and-collect">Click and Collect</a></li>
-                                <li> <a href="delivery-service">Delivery Service</a></li>
-                            </ul>
-                        </div>
-                
-                        <div class="col-sm-6 col-md-4 col-lg-4">
-                            <h2>Details</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet consequuntur explicabo perferendis sequi amet omnis suscipit nostrum, soluta error accusantium cumque voluptatibus iusto accusamus. Soluta deserunt vel ullam quia laudantium!</p>
-                            <a id="back-to-top" href="#Head" class="btn btn-primary btn-lg back_to_top" role="button" style="display: inline;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </footer>
+         <!--calls the nav bar from the footer.html file-->
+    <div id="nav-footer"></div>
+    <script>
+        $.get("footer.html", function(data1){
+            $("#nav-footer").replaceWith(data1);
+        });
+    </script> 
     </section>
 </html>
 
