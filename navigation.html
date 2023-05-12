@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tom's Catering</title>
+    <!--local js-->
+    <script src="js/toggleNav.js"></script>
+    
     <!-- styles -->
         <!-- used to get the toggle button -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
@@ -13,6 +16,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <!--bootstrap icons-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        
       </head>
 
   <body>
@@ -42,17 +46,46 @@
           <li>
             <a href="signup.html"><h4>signup</h4></a></a>
           </li>
-          <a href="basket.html">
-            <div class="cart">
-              <i class="bi bi-cart"></i>
-              <div class="cartAmount">0</div>
+            <div class="cart-btn">
+              <span class="nav-icon">
+                <i class="fas fa-cart-plus"></i>
+                <div class="cart-items">0</div>
+              </span>
             </div>
-          </a>
-        </ul>
-        <!-- social media -->
+            <!--start of the cart -->
+            <div class="cart">
+              <span class="close-cart">
+                <i class="fas fa-window-close"></i>
+                <h2>Your Cart: </h2>
+              </span>
+              <div class="cart-content">
+                <!--cart items-->
+                <div class="cart-item">
+                  <img src="images/stockimage2.jpg" alt="product">
+                  <div>
+                    <h4>Item 1 </h4>
+                    <h5>£19.99</h5>
+                    <span class="remove-item">
+                      remove
+                    </span>
+                  </div>
+                  <div>
+                    <i class="fas fa-chevron-up"></i>
+                    <p class="item-amount">0</p>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-footer">
+                <h3>your total: £ <span class="cart-total">0</span></h3>
+                <button class="clear-cart banner-btn">Clear Cart</button>
+              </div>
+            </div>
+
+
     </nav>
     <!-- javascript -->
-    <script src="js/toggleNav.js"></script>
+
 
 </html>
 
