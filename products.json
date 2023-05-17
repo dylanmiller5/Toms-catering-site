@@ -1,23 +1,18 @@
 {
-    "items": [
-      {
-        "sys": { "id": "1" },
-        "fields": {
-          "title": "Coloured Macaron",
-          "price": 9.99,
-          "image": { "fields": { "file": { "url": "./images/stockimage2.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "2" },
-        "fields": {
-          "title": "Dog Toast",
-          "price": 19.99,
-          "image": { "fields": { "file": { "url": "./images/stockimage3.jpg" } } }
-        }
+  "items": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "Product 1 ",
+        "price": 10.99,
+        "image": { "fields": { "file": { "url": "/images/stockImage.jpg" } } }
       }
-    ]
-        }
-      
-    
-  
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "Product 2",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "/images/stockimage2.jpg" } } }
+      }
+    }]}
