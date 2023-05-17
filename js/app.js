@@ -23,7 +23,7 @@ class Products{
     async getProducts(){
         try {
             let result = await fetch('products.json');
-            console.log(result);
+           
             let data = await result.json();
             // products is every item in the JSON 
             let products = data.items;
@@ -38,7 +38,7 @@ class Products{
 
             // the error appears to be here
             // cannot call specifc values from the array
-            console.log(products.id)
+       
             return products;
            
         } catch (error) {
@@ -78,11 +78,9 @@ class UI {
 
     getBagButtons(){
         const buttons = [...document.querySelectorAll(".bag-btn")];
-        console.log(buttons)
         buttons.forEach(button => {
             // THIS ID IS BEING SET TO UNDEFINED
             let id = button.dataset.id;
-            console.log(id);
             let inCart = cart.find(item => item.id === id);
             if (inCart){
                 button.innerText = "In Cart";
@@ -131,7 +129,6 @@ class Storage{
     static getProduct(id){
         // returns my array
         let products = JSON.parse(localStorage.getItem('products'));
-        console.log(products)
         // products.id and id are undefined
 
         return products.find(product => product.id === id);
