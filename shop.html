@@ -1,21 +1,80 @@
-<html>
-<head>
-   
-    <link rel="stylesheet" href="CSS/styles.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lara's Catering</title>
+    <!--local js-->
+    <script src="js/toggleNav.js"></script>
     
-
+    <!-- styles -->
+        <!-- used to get the toggle button -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+        <!--CSS styling-->
+        <link rel="stylesheet" href="CSS/styles.css" />
+        <!--bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <!--bootstrap icons-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <!-- i forgot what this is importing -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 </head>
-<body>
-    
-    <!--calls the nav bar from the navigation.html file-->
-    <div id="nav-header"></div>
-    <script>
-        $.get("navigation.html", function(data){
-            $("#nav-header").replaceWith(data);
-        });
-    </script> 
+      </head>
 
+  <body>
+    <nav>
+      <div class="nav-center">
+        <!-- nav header -->
+        <div class="nav-header">
+            <a href="/">
+                <h2 id="Head">Lara's Catering</h2>
+            </a>
+          <!--toggles nav on smaller screens-->
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- links -->
+        <ul class="links">
+          <li>
+            <a href="shop.html"><h4>shop</h4></a></a>
+          </li>
+          <li>
+            <a href="about.html"><h4>about</h4></a>
+          </li>
+          <li>
+            <a href="contact.html"><h4>contact</h4></a></a>
+          </li>
+          <li>
+            <a href="signup.html"><h4>signup</h4></a></a>
+          </li>
+            <div class="cart-btn">
+              <span class="nav-icon">
+                <i class="fas fa-cart-plus"></i>
+                <div class="cart-items">0</div>
+              </span>
+            </div>
+            <!--start of the cart -->
+            <div class="cart">
+              <span class="close-cart">
+                <i class="fas fa-window-close"></i>
+                <h2>Your Cart: </h2>
+              </span>
+              <div class="cart-content">
+                <!--cart items-->
+                <!--<div class="cart-item">
+                </div>
+                !-->
+              </div>
+              <div class="cart-footer">
+                <h3>your total: £ <span class="cart-total">0</span></h3>
+                <button class="clear-cart banner-btn">Clear Cart</button>
+              </div>
+            </div>
+    </nav>
+
+
+<section>
     <!--start of pages content-->
     <section class="content">
       <div class="onlineShop text-center">
@@ -26,11 +85,12 @@
         <section class="container spacer">
             <div class="container-fluid"> <!-- If Needed Left and Right Padding in 'md' and 'lg' screen means use container class -->
                 <div class="row justify-content-center">
-                    <div class="products-center">
-                                
-                    </div>
-                </div>  
+                    <div class="products-center"></div>            
+                </div>
+             </div>  
         </section>
+    </section>
+</section>
 
 
 
@@ -42,13 +102,13 @@
             $("#nav-footer").replaceWith(data1);
         });
     </script> 
+    
+    <script src="js/app.js"></script>
+
 </body>
 </html>
-<!--
-    needs to be called at the end of the file otherwise none vaules will be returned when 
-    dynamically adding elements.
--->
-<script src="js/app.js"></script>
+
+
 
 
 

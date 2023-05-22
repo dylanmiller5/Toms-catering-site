@@ -1,7 +1,6 @@
 // error with cartItem being undefiend and i dont know how to fix it
 // Storage.getProduct(id) === undef
 // when ID is being passed into the methods it is being passed as undefiend?
-
 // variables
 const cartBtn = document.querySelector('.cart-btn');
 const closeCartBtn = document.querySelector('.close-cart');
@@ -58,13 +57,11 @@ class UI {
             <div id="product">
                 <div class="col-sm-6">
                     <div class="card border-warning text-dark">
-                
                         <img class="card-img-top" src=${product.image} alt="Item 1 " >
                         <h3 class="card-title">${product.title}</h3>
                         <div class="card-body text-center">
                         <p class="card-text">£${product.price}</p>
                         <button class="bag-btn btn-primary" data-id=${product.id}>Add To Basket</button>
-                        <p>${product.id}</p>
                         <br><br>
                     </div>
                 </div>
@@ -78,15 +75,14 @@ class UI {
 
     getBagButtons(){
         const buttons = [...document.querySelectorAll(".bag-btn")];
+        buttonsDOM = buttons;
         buttons.forEach(button => {
-            // THIS ID IS BEING SET TO UNDEFINED
             let id = button.dataset.id;
             let inCart = cart.find(item => item.id === id);
             if (inCart){
                 button.innerText = "In Cart";
                 button.disable = true;
             }    
-
             button.addEventListener("click", (event)=>{
                 event.target.innerText = "In Cart";
                 event.target.disabled = true;
@@ -94,16 +90,14 @@ class UI {
                 // get products from products based on ID
                 let cartItem = {...Storage.getProduct(id),
                 amount:1};
-                console.log(cartItem)
-
                  // add the product to cart
                  cart = [...cart, cartItem];
-
                 // save cart in LS
-                Storage.saveCart(cart)
+                Storage.saveCart(cart);
                 // set values
                 this.setCartValues(cart);
                     // display cart item
+                this.addCartItem(cartItem);
                     // show the cart
                 })
         });
@@ -111,13 +105,34 @@ class UI {
     setCartValues(cart){
         let tempTotal = 0;
         let itemsTotal = 0;
-        cart.map(item =>{
+        cart.map(item => {
             tempTotal += item.price * item.amount;
             itemsTotal += item.amount;
-        })
-        cartTotal.innerText = parseFloat(tempTotal.toFixed(2))
+        });
+        
+        // THE BUTTON ELEMENT DOESNT EXIST
+        cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
         cartItems.innerText = itemsTotal;
-        console.log(cartTotal, cartItems);
+    }
+    addCartItem(item){
+        const div = document.createElement('div');
+        div.classList.add('cart-item');
+        div.innerHTML = `
+        <img src=${item.image} alt="product">
+        <div>
+          <h4>${item.title} </h4>
+          <h5>£${item.price}</h5>
+          <span class="remove-item" data-id=${item.id}>
+            remove
+          </span>
+        </div>
+        <div>
+          <i class="fas fa-chevron-up" data-id=${item.id}></i>
+          <p class="item-amount">${item.amount}</p>
+          <i class="fas fa-chevron-down" data-id=${item.id}></i>
+        </div> `;
+        cartContent.appendChild(div);
+        console.log(cartContent);
     }
 }
 
@@ -129,8 +144,6 @@ class Storage{
     static getProduct(id){
         // returns my array
         let products = JSON.parse(localStorage.getItem('products'));
-        // products.id and id are undefined
-
         return products.find(product => product.id === id);
     }
     static saveCart(cart){
