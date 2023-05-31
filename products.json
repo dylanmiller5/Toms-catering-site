@@ -21,7 +21,7 @@
       "fields": {
         "title": "Product 3",
         "price": 15.99,
-        "image": { "fields": { "file": { "url": "/images/stockimage2.jpg" } } }
+        "image": { "fields": { "file": { "url": "/images/stockimage3.jpg" } } }
       }
     },
     {
@@ -29,7 +29,7 @@
       "fields": {
         "title": "Product 4",
         "price": 19.99,
-        "image": { "fields": { "file": { "url": "/images/stockimage2.jpg" } } }
+        "image": { "fields": { "file": { "url": "/images/char.jpg" } } }
       }
     }
       ]}

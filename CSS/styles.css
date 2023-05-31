@@ -289,7 +289,7 @@ color: white
   background: var(--clr-primary-1);
   padding: 0 5px;
   border-radius: 30%;
-  color: var(--mainWhite);
+  color: red
 }
 
 .cart {
@@ -377,5 +377,17 @@ color: white
   background: var(--clr-primary-3);
   color: black;
   border: 1px solid black;
-  cursor: pointer;}
+  cursor: pointer;
+  align-items: center;
+}
   
+  
+
+.mainText{
+  padding-top: 25px;
+}
+
+.content{
+  padding-bottom: 400px;
+}
+
