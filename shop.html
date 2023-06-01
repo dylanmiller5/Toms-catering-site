@@ -1,64 +1,108 @@
-<html>
-<head>
-    <link rel="stylesheet" href="CSS/styles.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-</head>
-<body>
-    <!--calls the nav bar from the navigation.html file-->
-    <div id="nav-header"></div>
-    <script>
-        $.get("navigation.html", function(data){
-            $("#nav-header").replaceWith(data);
-        });
-    </script> 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tom's Catering</title>   
+    <!-- styles -->
+        <!-- used to get the toggle button -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+        <!--CSS styling-->
+        <link rel="stylesheet" href="CSS/styles.css" />
+        <!--bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <!--bootstrap icons-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <!-- used for passing the navigation bar across everyt page -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <!-- Stripe library for payments --> 
+        <script src="https://js.stripe.com/v3/"></script>
+  </head>
 
+        <body>
+          <nav>
+            <div class="nav-center">
+              <!-- nav header -->
+              <div class="nav-header">
+                  <a href="/">
+                      <h2 id="Head">Tom's Catering</h2>
+                  </a>
+                <!--toggles nav on smaller screens--> 
+                <button class="nav-toggle">
+                  <i class="fas fa-bars"></i>
+                </button>
+              </div>
+              <!-- links -->
+              <ul class="links">
+                <li>
+                  <a href="shop.html"><h4>shop</h4></a></a>
+                </li>
+                <li>
+                  <a href="about.html"><h4>about</h4></a>
+                </li>
+                <li>
+                  <a href="contact.html"><h4>contact</h4></a></a>
+                </li>
+                  <div class="cart-btn">
+                    <span class="nav-icon">
+                      <i class="fas fa-cart-plus"></i>
+                      <div class="cart-items">0</div>
+                    </span>
+                  </div>
+                  <!--start of the cart -->
+                  <div class="cart">
+                    <span class="close-cart">
+                      <i class="fas fa-window-close"></i>
+                      <h2>Your Cart: </h2>
+                    </span>
+                    <div class="cart-content">
+                     
+                    </div>
+                    <div class="cart-footer">
+                      <h3>your total: £ <span class="cart-total">0</span></h3>
+                      
+                      <!-- purchase items in the cart with STRIPE-->
+                      <a href="checkout.html" class="purchase-cart banner-btn">Purchase</a>
+                      <!-- clear all items out of the cart -->
+                      <button class="clear-cart banner-btn">Clear Cart</button>
+                    </div>
+                  </div>
+          </nav>
+
+  
+
+
+<section>
     <!--start of pages content-->
     <section class="content">
       <div class="onlineShop text-center">
         <h1><b>Online Shop</b></h1>
       </div>
     
-      <section id="content">
+      <section class="products">
         <section class="container spacer">
             <div class="container-fluid"> <!-- If Needed Left and Right Padding in 'md' and 'lg' screen means use container class -->
                 <div class="row justify-content-center">
-                    <div class="col-sm-6">
-                        <div class="card border-warning text-dark">
-                            
-                            <img class="card-img-top" src="images/stockimage3.jpg" alt="Item 1 " >
-                            <h3 class="card-title">Item 1</h3>
-                            <div class="card-body text-center">
-                            <p class="card-text">£9.99</p>
-                            <a href="#" class="btn btn-primary">Add To Basket</a>
-                            <br><br>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="card border-warning text-dark">
-                            <img class="card-img-top" src="images/stockimage2.jpg" alt="Item 2 " >
-                            <h3 class="card-title">Item 2</h3>
-                          <div class="card-body text-center">
-                            <p class="card-text">£19.99</p>
-                            <a href="#" class="btn btn-primary">Add To Basket</a>
-                            <br><br>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="products-center"></div>            
+                </div>
+             </div>  
         </section>
+    </section>
+</section>
+</section>
 
+<section>     <!--calls the nav bar from the footer.html file-->
+  <div id="nav-footer"></div>
+  <script>
+      $.get("footer.html", function(footer){
+          $("#nav-footer").replaceWith(footer);
+      });
+  </script> 
+</section>
 
-
-
-    <!--calls the nav bar from the footer.html file-->
-    <div id="nav-footer"></div>
-    <script>
-        $.get("footer.html", function(data1){
-            $("#nav-footer").replaceWith(data1);
-        });
-    </script> 
-
+<!-- calling the local JS last to not cause errors-->
+    <script src="js/app.js"></script>
+    <script src="js/toggleNav.js"></script>
 </body>
 </html>
 
@@ -71,5 +115,3 @@
 
 
 
-</body>
-</html>
