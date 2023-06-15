@@ -247,10 +247,6 @@ nav {
     padding: 0;
     margin: 0 0.5rem;
   }
-  .links a:hover {
-    padding: 0;
-    background: transparent;
-  }
 }
 
 .container {
@@ -388,6 +384,5 @@ color: white
 }
 
 .content{
-  padding-bottom: 400px;
+  padding-bottom: 300px;
 }
-
